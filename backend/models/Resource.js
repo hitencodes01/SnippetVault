@@ -10,19 +10,19 @@ const resourceSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    link : {type : string , required : true},
+    link : {type : String , required : true},
     category : {
-        type : string,
+        type : String,
         reuired : true,
         enum : ["Frontend" , "Backend" , "DevOps" , "Database"]
     },
-    tags : string,
+    tags : String,
     owner : {
         type : mongoose.Schema.Types.ObjectId,
         ref : "User",
         required: true
     },
-    votes : [{types : mongoose.Schema.Types.ObjectId, ref : 'User'}]
+    votes : [{type : mongoose.Schema.Types.ObjectId, ref : 'User'}]
 },{timestamps : true})
 
 const resourceModel = mongoose.model('Resource',resourceSchema)

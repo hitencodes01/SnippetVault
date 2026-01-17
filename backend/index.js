@@ -2,6 +2,7 @@ import express from 'express'
 import connectDB from './config/db.js'
 import { configDotenv } from 'dotenv'
 import auth from './routes/authRoutes.js'
+import resource from './routes/resourceRoutes.js'
 
 const app = express()
 app.use(express.json())
@@ -13,6 +14,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use('/api/auth', auth)
+app.use('/api/resource',resource)
 
 app.listen(port,()=>{
     connectDB()
